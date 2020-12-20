@@ -1,0 +1,105 @@
+Matplotib:- it is a plotting library for the python it provide different kind of graph
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+%matplotlib inline
+x = np.linspace(0,5,11)
+x
+array([0. , 0.5, 1. , 1.5, 2. , 2.5, 3. , 3.5, 4. , 4.5, 5. ])
+y=x**2
+y
+array([ 0.  ,  0.25,  1.  ,  2.25,  4.  ,  6.25,  9.  , 12.25, 16.  ,
+       20.25, 25.  ])
+plt.plot(x,y)
+[<matplotlib.lines.Line2D at 0xa4fe538>]
+
+plt.plot(x,y,'r')
+[<matplotlib.lines.Line2D at 0xa4bb7c0>]
+
+plt.plot(x,y,'o')
+[<matplotlib.lines.Line2D at 0xa545aa8>]
+
+plt.plot(x,y,'y')
+plt.xlabel('X Axis Title here')
+plt.ylabel('Y Axix here')
+plt.title('Title here')
+plt.show()
+
+subplot:- when you create multiple withsame canvas.
+    syntax:- plt.subplot(no of rows,no of column,plot no )
+plt.subplot(1,2,1)
+plt.plot(x,y,'r--')
+plt.subplot(1,2,2)
+plt.plot(y,x,'g*')
+[<matplotlib.lines.Line2D at 0xa5972e0>]
+
+plt.subplot(2,1,1)
+plt.plot(x,y,'r--')
+plt.subplot(2,1,2)
+plt.plot(y,x,'g*')
+[<matplotlib.lines.Line2D at 0xa624628>]
+
+#create figure
+fig = plt.figure()
+​
+#Add set of axes of figure
+​
+axes = fig.add_axes([0.1,0.1,0.8,0.8])# left,bottom,width,height
+​
+#plot
+axes.plot(x,y,'c')
+axes.set_xlabel('set x label')
+axes.set_ylabel('set y lable')
+axes.set_title('set_title')
+Text(0.5, 1.0, 'set_title')
+
+#create figure
+fig = plt.figure()
+​
+#Add set of axes of figure
+​
+cmds = fig.add_axes([0.1,0.1,0.5,0.5])# left,bottom,width,height
+
+fig = plt.figure()
+
+axes1 = fig.add_axes([0.1,0.1,0.8,0.8])#main axes
+axes2 = fig.add_axes([0.2,0.5,0.40,0.3])#insert axes
+
+#Larger figure
+axes1.plot(x,y,'c')
+axes1.set_xlabel('X label_axes 2')
+axes1.set_ylabel('X label_axes 2')
+axes1.set_title('Axes 2 title')
+#insert figure axes 2
+axes2.plot(y,x,'m')
+axes2.set_xlabel('X label_axes 2')
+axes2.set_ylabel('X label_axes 2')
+axes2.set_title('Axes 2 title')
+
+#subplots
+fig,axes = plt.subplots()
+
+axes.plot(x,y,'r')
+axes.set_xlabel('x')
+axes.set_ylabel('y')
+axes.set_title('title')
+
+fig,axes = plt.subplots(nrows=1,ncols=2)
+
+for ax in axes:
+    ax.plot(x,y,'b')
+    ax.set_xlabel('x')
+    ax.set_ylabel('y')
+    ax.set_title('title')
+fig
+
+Legend :-A legend is an area to describe the element of the'
+graph. in matplotlib lib there is function called legend()
+which used to place a legend on the axes.---loc method is
+used to specifiy the location of the legend.
+
+---default location ---upper(left corner)
+
+
+
